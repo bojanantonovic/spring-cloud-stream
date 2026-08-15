@@ -1,3 +1,22 @@
 spring:
   application:
     name: spring-cloud-stream
+  cloud:
+    function:
+      definition: orderEventHandler
+    stream:
+      bindings:
+        orderEventHandler-in-0:
+          destination: orders
+          group: ${spring.application.name}
+        orders-out-0:
+          destination: orders
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,bindings
+  endpoint:
+    health:
+      show-details: always
