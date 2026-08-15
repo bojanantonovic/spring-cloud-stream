@@ -1,0 +1,9 @@
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "orderId": "order-1",
+  "product": "widget",
+  "quantity": 3,
+  "timestamp": "2026-08-15T12:00:00Z"
+}
